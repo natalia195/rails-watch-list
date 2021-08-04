@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid banner">
+  <div class="container">
+    <h1 class="display-4">Lists of movies</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <% @lists.each do |l| %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= l.name %></h5>
+            <a href="<%= list_path(l) %>">
+            </a>
+            <p class="card-text"></p>
+          </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
+  <p class="btn btn-primary">
+    <%= link_to "New list", new_list_path%>
+  </p>
+</div>
+
+

@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
+  get 'bookmarks/new'
+  get 'bookmarks/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :lists, only: [:index, :show, :new, :create] do
-    resources :bookmarks, only: [:index, :show]
-    resources :movies, only: [:index, :show]
+    resources :bookmarks, only: [:new, :create, :destroy], shallow: true
   end
-
-  resource :movies, only: [:show, :update, :destroy]
-
-  resolve("Basket") { route_for(:movies) }
 end
