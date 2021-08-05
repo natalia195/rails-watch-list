@@ -1,13 +1,19 @@
-<h2> <%= @list.name %> </h2>
-<ul>
-  <% @bookmarks.each do |b| %>
-    <li>
-      <% list_path(b) %>
-        <%= b.comment %>
-        <%= b.movie.title %>
-      </a>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Back to list",  lists_path%>
-<%= link_to "New bookmark",  new_list_bookmark_path(@list.id)%>
+<div class="container">
+  <h2> <%= @list.name %> </h2>
+  <ul>
+    <% @bookmarks.each do |b| %>
+      <li>
+        <% list_path(b) %>
+          <%= b.comment %>
+          <%= b.movie.title %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <a href="<%= lists_path %>" class="btn btn-primary">
+    Back to list
+  </a>
+  <a href="<%= new_list_bookmark_path(@list.id) %>" class="btn btn-primary">
+    New Bookmark
+  </a>
+</div>

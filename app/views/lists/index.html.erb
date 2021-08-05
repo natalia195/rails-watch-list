@@ -5,23 +5,24 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row d-flex">
+    <% @lists.each do |l| %>
     <div class="col-sm-4">
-        <% @lists.each do |l| %>
-        <div class="card">
+        <div class="card p-2">
           <div class="card-body">
-            <h5 class="card-title"><%= l.name %></h5>
             <a href="<%= list_path(l) %>">
+            <h5 class="card-title"><%= l.name %></h5>
             </a>
             <p class="card-text"></p>
           </div>
-        <% end %>
         </div>
     </div>
+    <% end %>
   </div>
-  <p class="btn btn-primary">
-    <%= link_to "New list", new_list_path%>
-  </p>
+
+  <a href="<%= new_list_path %>" class="btn btn-primary">
+     New list
+  </a>
 </div>
 
 
