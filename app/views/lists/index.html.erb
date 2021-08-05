@@ -4,6 +4,7 @@
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
 </div>
+
 <div class="container">
   <div class="row d-flex">
     <% @lists.each do |l| %>
@@ -21,8 +22,8 @@
   </div>
 
   <a href="<%= new_list_path %>" class="btn btn-primary">
-     New list
+    New list
   </a>
+
+<%# style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')" %>
 </div>
-
-

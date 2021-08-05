@@ -15,9 +15,11 @@ class ListsController < ApplicationController
   
   def create
     @list = List.new(list_params)
+    puts "CREATE ACTiON"
     if @list.save
+      puts "SAVING LIST #{@list.inspect}"
       flash[:success] = "List successfully created"
-      redirect_to @list
+      redirect_to list_path(@list)
     else
       flash[:error] = "Something went wrong"
       render 'new'
@@ -27,6 +29,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end

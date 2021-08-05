@@ -1,11 +1,15 @@
-<form>
-    <div class="container">
-    <h2> Create a new list </h2>
-    <%= simple_form_for @list do |f| %>
-      <%= f.input :name %>
-      <%= f.button :submit %>
-    <% end %>
-    </div>
-</form>
+<div class="container">
 
-<%= link_to "Back to lists", lists_path %>
+      <h2> Create a new list </h2>
+      <%= simple_form_for @list, url: lists_path, method: "post" do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo %>
+        <%= f.button :submit %>
+      <% end %>
+
+  <a href="<%= lists_path %>" class="btn btn-primary">
+    Back to lists
+  </a>
+
+</div>
+
