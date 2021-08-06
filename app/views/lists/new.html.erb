@@ -4,7 +4,9 @@
       <%= simple_form_for @list, url: lists_path, method: "post" do |f| %>
         <%= f.input :name %>
         <%= f.input :photo %>
+        <a class="btn btn-success"> 
         <%= f.button :submit %>
+        </a>
       <% end %>
 
   <a href="<%= lists_path %>" class="btn btn-primary">

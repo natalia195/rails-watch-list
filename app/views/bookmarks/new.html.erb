@@ -1,7 +1,11 @@
-<h1>New Bookmarks</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.association :list %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <h1>New Bookmarks</h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.association :list %>
+    <a class="btn btn-success"> 
+    <%= f.button :submit %>
+    </a>
+  <% end %>
+</div>
